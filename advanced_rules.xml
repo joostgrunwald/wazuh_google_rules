@@ -1,0 +1,295 @@
+<group name="gcp,google_workspace,">
+	<group name="gcp,google_workspace,">
+	<rule id="600700" level="7" frequency="2" timeframe="600">
+	<if_matched_sid>6005004</if_matched_sid>
+	<same_user/>
+	<different_location/>
+	<description>Logins from different locations within 10 minutes</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600701" level="10" frequency="3" timeframe="600">
+	<if_matched_sid>600567</if_matched_sid>
+	<same_source_ip />
+	<description>Possible rapid account changes: Multiple password changes from the same source IP address within 10 minutes.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600702" level="10" frequency="2" timeframe="3600">
+	<if_matched_sid>600620</if_matched_sid>
+	<description>Multiple mobile devices blocked within an hour</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600703" level="7" frequency="5" timeframe="60">
+	<if_matched_sid>600558</if_matched_sid>
+	<same_user/>
+	<description>Multiple data transfer requests created by the same user within a minute</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600704" level="7" frequency="5" timeframe="60">
+	<if_matched_sid>6005004</if_matched_sid>
+	<same_ip/>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+	</group>
+
+
+	<rule id="600705" level="7" frequency="3" timeframe="600">
+	    <if_matched_sid>passwordrecovery,600504</if_matched_sid>
+	    <description>Possible account takeover: Multiple password recovery attempts followed by successful account access.</description>
+	    <mitre>
+		<id></id>
+	    </mitre>
+	</rule>
+
+
+	<rule id="600706" level="7" frequency="5" timeframe="86400">
+	<if_matched_sid>600504</if_matched_sid>
+	<same_user/>
+	<description>Same user logged in from different IPs</description>
+	<different_source_ip/>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+	Meerdere privileges granted (600590)
+	<rule id="600707" level="10" frequency="3" timeframe="3600">
+	<if_matched_sid>600590</if_matched_sid>
+	<description>Multiple users granted administrator privileges within an hour</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+	<rule id="600708" level="10" frequency="3" timeframe="3600">
+	<if_matched_sid>600530</if_matched_sid>
+	<description>Multiple users privileges removed within an hour</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600709" level="8" frequency="5" timeframe="3600">
+	<if_matched_sid>600515</if_matched_sid>
+	<same_user/>
+	<description>Multiple login failures by the same user</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600710" level="8" frequency="5" timeframe="3600">
+	<if_matched_sid>600515,600504</if_matched_sid>
+	<same_user/>
+	<description>Multiple login failures, followed by a login success by the same user</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+	<rule id="600711" level="8" frequency="5" timeframe="3600">
+	<if_matched_sid>600515</if_matched_sid>
+	<same_user/>
+	<description>Multiple failed login attempts detected for a user, potential brute force attack</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600712" level="10" frequency="10" timeframe="3600">
+	<if_matched_sid>600515</if_matched_sid>
+	<same_user/>
+	<description>Excessive failed login attempts detected for user $(userDisplayName), likely brute force attack</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600713" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600603</if_matched_sid>
+	<same_user/>
+	<description>Multiple suspicious logins from a less secure app detected for a user.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600714" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600605</if_matched_sid>
+	<same_user/>
+	<description>Multiple suspicious logins detected for a user.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+
+	<rule id="600715" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600528</if_matched_sid>
+	<same_user/>
+	<description>Multiple privileges added.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600716" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600530</if_matched_sid>
+	<same_user/>
+	<description>Multiple privileges removed.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600717" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600557</if_matched_sid>
+	<same_user/>
+	<description>Multiple users deleted within an hour.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600718" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600570</if_matched_sid>
+	<same_user/>
+	<description>Multiple alert center alerts were deleted.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+	<rule id="600719" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600585</if_matched_sid>
+	<same_user/>
+	<description>Multiple document ownerships were transferred.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+	<rule id="600720" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600596</if_matched_sid>
+	<same_user/>
+	<description>Multiple users were granted delegated administrator privileges.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+	<rule id="600721" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600602</if_matched_sid>
+	<same_user/>
+	<description>Multiple accounts hijacked and disabled.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600722" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600607</if_matched_sid>
+	<same_user/>
+	<description>Multiple accounts disabled, due to spamming.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+	<rule id="600723" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600623</if_matched_sid>
+	<same_user/>
+	<description>Multiple passwords changed, within an hour.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+	<rule id="600724" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600542</if_matched_sid>
+	<same_user/>
+	<description>Multiple api accesses granted, within an hour.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+	<rule id="600725" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>6004552</if_matched_sid>
+	<same_user/>
+	<description>Multiple users suspended, within an hour.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600726" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600584</if_matched_sid>
+	<same_user/>
+	<description>Multiple devices deleted, within an hour.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+	<rule id="600727" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600609</if_matched_sid>
+	<same_user/>
+	<description>Multiple trusted domains added, within an hour.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600728" level="9" frequency="5" timeframe="3600">
+	<if_matched_sid>600531</if_matched_sid>
+	<same_user/>
+	<description>Multiple emails released from quarantine, within an hour.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+
+	<rule id="600729" level="12" frequency="5" timeframe="3600">
+	<if_matched_sid>600580,600515</if_matched_sid>
+	<same_user/>
+	<description>login failure from misp IP.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+
+	<rule id="600730" level="13" frequency="5" timeframe="3600">
+	<if_matched_sid>600580,600504</if_matched_sid>
+	<same_user/>
+	<description>login success from misp IP.</description>
+	<mitre>
+	<id></id>
+	</mitre>
+	</rule>
+</group>
